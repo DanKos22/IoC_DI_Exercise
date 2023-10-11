@@ -7,6 +7,6 @@ public class Emailservice {
 
     public String sendEmail(String To, String message)
     {
-
+        return message;
     }
 }

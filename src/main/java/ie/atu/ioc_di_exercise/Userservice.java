@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class Userservice {
 
-    private Emailservice emailservice;
+    private final Emailservice emailservice;
 
     @Autowired
     public Userservice(Emailservice emailservice)
@@ -14,8 +14,9 @@ public class Userservice {
         this.emailservice = emailservice;
     }
 
-    public void registerUser(String name, String email)
+    public String registerUser(String name, String email)
     {
         emailservice.sendEmail(email, "Welcome to our platform");
+        return email;
     }
 }
