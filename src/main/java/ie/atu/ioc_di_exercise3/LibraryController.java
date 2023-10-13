@@ -18,7 +18,7 @@ public class LibraryController {
     }
 
     // A method to handle a POST request to add a book to the library
-    @PostMapping("/addBook")
+    @PostMapping("/sendBook")
     public String sendBook(@RequestBody Book newBook)
     {
         return libraryService.addBook(newBook);
