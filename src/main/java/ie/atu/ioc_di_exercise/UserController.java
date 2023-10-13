@@ -1,9 +1,7 @@
 package ie.atu.ioc_di_exercise;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
@@ -20,5 +18,11 @@ public class UserController {
     public String getUser(@PathVariable String name, @PathVariable String email)
     {
         return us.registerUser(name, email);
+    }
+
+    @PostMapping("/registerUserBody")
+    public String confirmAndRegister(@RequestBody UserDetails userDetails)
+    {
+        return us.createMessage(userDetails);
     }
 }
