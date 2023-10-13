@@ -16,7 +16,7 @@ public class Userservice {
 
     public String registerUser(String name, String email)
     {
-        emailservice.sendEmail(email, "Welcome to our platform");
-        return email;
+        String message = emailservice.sendEmail(email, "Welcome to our platform\t" + name + "\t" + email);
+        return message;
     }
 }
