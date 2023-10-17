@@ -20,6 +20,7 @@ public class UserController {
         return us.registerUser(name, email);
     }
 
+    // 2nd Exercise
     @PostMapping("/registerUserBody")
     public String confirmAndRegister(@RequestBody UserDetails userDetails)
     {
